@@ -10,7 +10,8 @@
   "license": "MIT",
   "scripts": {
     "watch": "parcel watch",
-    "build": "parcel build"
+    "build": "parcel build",
+    "prepublish": "npm run build"
   },
   "directories": {
     "src": "./src",
