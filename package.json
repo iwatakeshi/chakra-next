@@ -1,6 +1,6 @@
 {
   "name": "@iwatakeshi/chakra-next",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": false,
   "source": "src/index.ts",
   "main": "dist/main.js",
