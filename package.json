@@ -1,6 +1,7 @@
 {
   "name": "@iwatakeshi/chakra-next",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "private": false,
   "source": "src/index.ts",
   "main": "dist/main.js",
   "module": "dist/module.js",
@@ -10,7 +11,19 @@
   "license": "MIT",
   "scripts": {
     "watch": "parcel watch",
-    "build": "parcel build && tsc -p tsconfig.types.json"
+    "build": "parcel build && tsc -p tsconfig.types.json",
+    "prepublish": "npm run build"
+  },
+  "directories": {
+    "src": "./src",
+    "dist": "./dist"
+  },
+  "files": [
+    "dist/**/*",
+    "src/**/*"
+  ],
+  "publishConfig": {
+    "access": "public"
   },
   "devDependencies": {
     "@parcel/packager-ts": "^2.0.1",
