@@ -3,6 +3,7 @@ import React from 'react'
 import { Button as ChakraButton, ButtonProps as ChakraButtonProps } from '@chakra-ui/react'
 import NextLink, { LinkProps } from 'next/link'
 import { isRelativeHref } from "../../utils/is-relative-href";
+import { Url } from '../../types/url';
 
 interface Props {
   href?: string
@@ -11,10 +12,10 @@ interface Props {
 
 export type ButtonProps = Props & ChakraButtonProps
 
-export default function Button({href, next, ...props}: ButtonProps) {
+export default function Button({ href, next, ...props }: ButtonProps) {
   // Check if href is a relative url
   if (isRelativeHref(href)) return (
-    <NextLink href={href} passHref {...next}>
+    <NextLink href={href as Url} passHref {...next}>
       <ChakraButton as="a" {...props} />
     </NextLink>
   )
