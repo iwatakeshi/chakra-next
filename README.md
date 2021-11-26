@@ -44,15 +44,7 @@ import { IconButton } from "@iwatakeshi/chakra-next";
 ### Image
 
 ```tsx
-import { Image } from '@iwatakeshi/chakra-next';
+import { Image } from "@iwatakeshi/chakra-next";
 
-<Image src="..." />
-
-// or
-
-<Image src="...">
-{
-  (image) => <div style={'...'}>{image}</div>
-}
-</Image>
+<Image src="..." />;
 ```
