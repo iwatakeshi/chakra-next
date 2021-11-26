@@ -1,10 +1,10 @@
 import { chakra, ImageProps as ChakraImageProps } from "@chakra-ui/react";
-import NextImage, { ImageProps as NextImageProps, ImageLoaderProps as NextImageLoadProps } from "next/image";
-import { Renderable } from '../../types/renderable';
+import NextImage from "next/image";
+import { ImageProps as NextImageProps, ImageLoaderProps as NextImageLoadProps } from "../../types/image";
 import React from 'react'
 
 const ChakraImage = chakra(NextImage, {
-  shouldForwardProp: (prop) =>
+  shouldForwardProp: (prop: any) =>
     [
       'width',
       'height',
@@ -20,16 +20,11 @@ const ChakraImage = chakra(NextImage, {
 });
 
 
-type ChakraNextImageProps = Omit<ChakraImageProps, keyof NextImageProps> &
-  Omit<NextImageProps, keyof ChakraImageProps>
-
-export interface ImageProps extends ChakraNextImageProps, Partial<Renderable> {
-  src: string
-}
+export type ImageProps = Omit<ChakraImageProps, keyof NextImageProps> &
+  Omit<NextImageProps, keyof ChakraImageProps> & { src: string }
 
 export type ImageLoaderProps = NextImageLoadProps
 
-export default function Image({ children, ...props }: ImageProps) {
-  const image = <ChakraImage {...props} />
-  return children ? children(image) : image
+export default function Image(props: ImageProps) {
+  return <ChakraImage {...props} />
 }
