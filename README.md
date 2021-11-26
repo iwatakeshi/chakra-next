@@ -17,20 +17,42 @@ npm add @iwatakeshi/chakra-next
 #### Link
 
 ```tsx
-<Link href="/about" />
+import { Link } from "@iwatakeshi/chakra-next";
+
+<Link href="/about" />;
 // => <NextLink href="/about" passHref><Link /></NextLink>
 ```
 
 #### Button
 
 ```tsx
-<Button href="/about" />
+import { Button } from "@iwatakeshi/chakra-next";
+
+<Button href="/about" />;
 // => <NextLink href="/about" passHref><Button as="a" /></NextLink>
 ```
 
 ### IconButton
 
 ```tsx
-<IconButton href="/about" />
+import { IconButton } from "@iwatakeshi/chakra-next";
+
+<IconButton href="/about" />;
 // => <NextLink href="/about" passHref><IconButton as="a" /></NextLink>
+```
+
+### Image
+
+```tsx
+import { Image } from '@iwatakeshi/chakra-next';
+
+<Image src="..." />
+
+// or
+
+<Image src="...">
+{
+  (image) => <div style={'...'}>{image}</div>
+}
+</Image>
 ```
