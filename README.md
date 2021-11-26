@@ -1,2 +1,36 @@
 # chakra-next
+
 A set of components to integrate with Chakra UI and Next.js
+
+## Usage
+
+### Installation
+
+```bash
+npm add @iwatakeshi/chakra-next
+```
+
+### Components
+
+> Note: All components will automatically wrap Chakra UI's components with Next's `Link` when `href` is a relative url.
+
+#### Link
+
+```tsx
+<Link href="/about" />
+// => <NextLink href="/about" passHref><Link /></NextLink>
+```
+
+#### Button
+
+```tsx
+<Button href="/about" />
+// => <NextLink href="/about" passHref><Button as="a" /></NextLink>
+```
+
+### IconButton
+
+```tsx
+<IconButton href="/about" />
+// => <NextLink href="/about" passHref><IconButton as="a" /></NextLink>
+```
