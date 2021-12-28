@@ -1,13 +1,11 @@
-import React from 'react'
+import React, { AnchorHTMLAttributes } from 'react'
 
 import { Button as ChakraButton, ButtonProps as ChakraButtonProps } from '@chakra-ui/react'
 import NextLink, { LinkProps } from 'next/link'
 import { isRelativeHref } from "../../utils/is-relative-href";
 import { Url } from '../../types/url';
-
-interface Props {
-  href?: string
-  next?: Omit<LinkProps, 'href'>
+interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
+  next?: Omit<LinkProps, keyof AnchorHTMLAttributes<HTMLAnchorElement>>
 }
 
 export type ButtonProps = Props & ChakraButtonProps
